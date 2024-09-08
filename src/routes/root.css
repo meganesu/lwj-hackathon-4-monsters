@@ -1,16 +1,33 @@
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: orange;
+  padding: 1.5em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 footer {
   background-color: cornflowerblue;
+  text-align: center;
+  padding: 1.5em;
 }
 
 main {
   flex-grow: 1;
+  width: 100%;
+  max-width: 80ch;
+  margin: auto;
+  padding: 1.5em;
 }
 
-.page-wrapper {
+#page-wrapper {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
