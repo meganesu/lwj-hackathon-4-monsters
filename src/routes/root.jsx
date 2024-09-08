@@ -23,7 +23,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer>
-        This app was created as part of the Learn with Jason Web Dev Challenge Hackathon #4.
+        👩‍💻 This app was created as part of the Learn with Jason Web Dev Challenge Hackathon #4.
       </footer>
     </div>
   )
