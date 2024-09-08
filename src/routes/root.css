@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  background-color: orange;
+}
+
+footer {
+  background-color: cornflowerblue;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.page-wrapper {
+  display: flex;
+}
