@@ -3,7 +3,6 @@ import { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";

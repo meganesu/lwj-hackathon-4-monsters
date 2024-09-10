@@ -1,5 +1,3 @@
-import { Code } from "@/components/typography/code";
-import { Link } from "@/components/typography/link";
 import { Component, ReactNode } from "react";
 
 // NOTE: Once you get Clerk working you can simplify this error boundary
@@ -25,17 +23,17 @@ export class ErrorBoundary extends Component<
           <>
             <p>
               Add{" "}
-              <Code>
+              <code>
                 VITE_CLERK_PUBLISHABLE_KEY="{"<"}your publishable key{">"}"
-              </Code>{" "}
-              to the <Code>.env.local</Code> file
+              </code>{" "}
+              to the <code>.env.local</code> file
             </p>
             {clerkDashboardUrl ? (
               <p>
                 You can find it at{" "}
-                <Link href={clerkDashboardUrl} target="_blank">
+                <a href={clerkDashboardUrl} target="_blank">
                   {clerkDashboardUrl}
-                </Link>
+                </a>
               </p>
             ) : null}
             <p className="pl-8 text-muted-foreground">Raw error: {errorText}</p>
