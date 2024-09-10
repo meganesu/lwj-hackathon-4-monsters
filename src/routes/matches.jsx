@@ -1,6 +1,6 @@
 const Matches = () => {
   return (
-    <p>This is a test!</p>
+    <p>Coming Soon!</p>
   )
 }
 

@@ -11,7 +11,7 @@ const Layout = () => {
         <nav>
           <Authenticated>
             <Link to={`editProfile`}>Edit My Profile</Link>
-            <Link to={`matches`}>My Connections</Link>
+            <Link to={`matches`}>My Matches</Link>
             <UserButton />
           </Authenticated>
           <Unauthenticated>
