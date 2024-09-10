@@ -35,6 +35,13 @@ After you sign in, the home page will show a list of users of the opposite speci
 
 Click the "Connect!" button for a user to get their email address! (I know this is super bad practice from a security standpoint. Someday I'd like to add a chat feature so that users can talk in the app without needing to exchange personal information.)
 
+### Known bugs
+
+- Currently, names are hard-coded into Clerk via the dashboard. If you create a new account, you won't have a name set, so you'll probably see some errors or unexpected behavior. Use one of the accounts provided to avoid this.
+
+- Species can be set once but not edited. All the test accounts already have their species set in the Convex database. Using the Edit Profile page to submit an updated species value won't actually do anything. (I meant to add this but ran out of time.)
+
+
 ## Tools I used
 
 - Vite & React
