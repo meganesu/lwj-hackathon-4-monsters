@@ -53,7 +53,7 @@ There were a bunch of features I wanted to add, but ran out of time for.
     - I spent most of my time on the functionality (getting the data to talk nicely between the React components & Convex functions), so I didn't have a chance to do much in the way of styling.
 - **Additional profile fields**
     - Users should be able to add an "About Me" section to display on their profiles.
-    - Users should be able to edit their names and species. (Currently, names are hard-coded into Clerk via the dashboard. Species can be set once but not edited.)
+    - Users should be able to edit their names and species. (Known bugs: Currently, names are hard-coded into Clerk via the dashboard. Species can be set once but not edited.)
 - **Connection requests** (instead of exposing contact info directly, like how dating apps work 😅).
     - A monster and human must both press connect on each other's profiles before they'll exchange contact information.
     - The My Matches page shows you a list of the users you've matched with.
