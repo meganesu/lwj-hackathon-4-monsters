@@ -1,4 +1,5 @@
-import { query, mutation } from "./_generated/server";
+import { query, mutation, action } from "./_generated/server";
+import { api } from "../convex/_generated/api"
 import { v } from "convex/values";
 
 export const getCurrentUser = query({
@@ -35,6 +36,24 @@ export const getUsersBySpecies = query({
       .filter(user => user.eq(user.field("species"), args.species))
       .collect()
 
+    return users
+  }
+})
+
+export const getUsersBySpeciesAction = action({
+  args: { species: v.string() },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (identity === null) {
+      throw new Error("Not authenticated!")
+    }
+    console.log("identity from getUsersBySpeciesAction", identity)
+
+    const users = await ctx.runQuery(api.users.getUsersBySpecies, {
+      species: args.species
+    })
+
+    console.log("users", users)
     return users
   }
 })
