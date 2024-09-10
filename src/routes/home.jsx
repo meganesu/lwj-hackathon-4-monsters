@@ -1,6 +1,7 @@
 import { Authenticated, Unauthenticated, useQuery, useAction } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import React, { useState, useCallback, useEffect } from "react";
+import "./home.css"
 
 const Home = () => {
   return (

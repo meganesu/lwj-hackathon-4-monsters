@@ -24,6 +24,7 @@ main {
   max-width: 80ch;
   margin: auto;
   padding: 1.5em;
+  box-sizing: border-box;
 }
 
 #page-wrapper {
