@@ -9,14 +9,35 @@ export const getCurrentUser = query({
       throw new Error("Not authenticated!")
     }
 
+    const identityName = identity.name;
+    console.log("identity name", identityName)
+
     console.log("identity inside getCurrentUser", identity);
 
     return await ctx.db
       .query("users")
-      .filter(user => user.eq(user.field("clerkId"), identity.subject))
+      .filter(user => user.eq(user.field("email"), identity.email))
       .collect()
   }
 });
+
+export const getUsersBySpecies = query({
+  args: { species: v.string() },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (identity === null) {
+      throw new Error("Not authenticated!")
+    }
+    console.log("identity from getUsersBySpecies", identity)
+
+    const users = await ctx.db
+      .query("users")
+      .filter(user => user.eq(user.field("species"), args.species))
+      .collect()
+
+    return users
+  }
+})
 
 export const createUser = mutation({
   args: { 
@@ -27,7 +48,7 @@ export const createUser = mutation({
     const identity = await ctx.auth.getUserIdentity();
 
     const newUserId = await ctx.db.insert("users", { 
-      clerkId: identity.subject,
+      email: identity.email,
       species: args.species 
     })
 
