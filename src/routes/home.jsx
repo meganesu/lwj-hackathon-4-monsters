@@ -59,11 +59,37 @@ const Content = () => {
     <ul>
       {
         users.map(user => (
-          <li>{user.name}</li>
+          <Profile name={user.name} email={user.email} />
         ))
       }
     </ul>
   )
 }
+
+const Profile = ({ name, email }) => {
+  const [shouldShowEmail, setShouldShowEmail] = useState(false)
+
+  const handleClick = () => {
+    console.log("IT WORKS!")
+    setShouldShowEmail(true)
+  }
+
+  return (
+    <li>
+      <div>
+        <p>{name}</p>
+        {
+          !shouldShowEmail &&
+          <button onClick={handleClick}>Connect!</button>
+        }
+        {
+          shouldShowEmail && 
+          <p>{email}</p>
+        }
+      </div>
+    </li>
+  )
+}
+
 
 export default Home;
