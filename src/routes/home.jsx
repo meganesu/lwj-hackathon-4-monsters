@@ -12,8 +12,12 @@ const Home = () => {
       </Authenticated>
       <Unauthenticated>
         <h1>
-          Welcome to Monster Match: Bridging Two Worlds, One Connection at a Time
+          Welcome to Monster Match!
         </h1>
+        <h2>
+          Bridging Two Worlds, One Connection at a Time
+        </h2>
+        <p id="emojis">🧟🧡🧑🏽‍⚕️</p>
         <p>
           In a world where monsters are real, it's time to go beyond fear and embrace understanding. Monster Match is the first-ever inter-species cultural exchange program, designed to help humans and monsters learn from each other in a unique, immersive way.
         </p>
