@@ -1,22 +1,58 @@
-# Convex + TypeScript + ESLint + Vite + React + Clerk + Tailwind + shadcn/ui
+# Monster Match
 
-This template provides a minimal setup to get Convex working, with TypeScript,
-ESLint and React using [Vite](https://vitejs.dev/). It uses [Clerk](https://clerk.dev/) for user authentication.
+Welcome to the Monster Match!
 
-Start by editing `convex/myFunctions.ts` and interact with your React app.
+This app was created as part of the Learn with [Jason Web Dev Challenge Hackathon #4](https://www.learnwithjason.dev/blog/web-dev-challenge-hackathon-monsters).
 
-See Convex docs at https://docs.convex.dev/home
+## Goal
 
-## Setting up
+Monsters are real! And they're real misunderstood!
 
-```
-npm create convex@latest -t react-vite-clerk-shadcn
-```
+As a way to build empathy between monsters and humans, Monster Match seeks to create the first-ever inter-species cultural exchange program.
 
-Then:
 
-1. Follow steps 1 to 3 in the [Clerk onboarding guide](https://docs.convex.dev/auth/clerk#get-started)
-2. Paste the Issuer URL as `CLERK_JWT_ISSUER_DOMAIN` to your dev deployment environment variable settings on the Convex dashboard (see [docs](https://docs.convex.dev/auth/clerk#configuring-dev-and-prod-instances))
-3. Paste your publishable key as `VITE_CLERK_PUBLISHABLE_KEY="<your publishable key>"` to the `.env.local` file in this directory.
+## Test Credentials
 
-If you want to sync Clerk user data via webhooks, check out this [example repo](https://github.com/thomasballinger/convex-clerk-users-table/).
+You can sign in as a monster or as a user. (The passwords and emails are the same. Don't tell.)
+
+Monster accounts:
+
+- `monster+clerk_test@example.com`
+- `monster2+clerk_test@example.com`
+- `monster3@example.com`
+
+Human accounts:
+
+- `human+clerk_test@example.com`
+- `human2@example.com`
+- `human3@example.com`
+
+## How to Test
+
+On the home page, use the Sign In button in the header to log into one of the accounts above.
+
+After you sign in, the home page will show a list of users of the opposite species. (Humans will see monsters, monsters will see humans.)
+
+Click the "Connect!" button for a user to get their email address! (I know this is super bad practice from a security standpoint. Someday I'd like to add a chat feature so that users can talk in the app without needing to exchange personal information.)
+
+## Tools I used
+
+- Vite & React
+- Convex (for database)
+- Clerk (for auth)
+- React Router (for routes)
+- pnpm (for package management)
+- Netlify (for hosting)
+- ChatGPT (to generate the home page text, & for debugging)
+
+## Plans for v2 and Beyond
+
+There were a bunch of features I wanted to add, but ran out of time for.
+
+- **Additional profile fields**
+    - Users should be able to add an "About Me" section to display on their profiles.
+    - Users should be able to edit their names and species. (Currently, names are hard-coded into Clerk via the dashboard. Species can be set once but not edited.)
+- **Connection requests** (instead of exposing contact info directly, like how dating apps work 😅).
+    - A monster and human must both press connect on each other's profiles before they'll exchange contact information.
+- **Chat**
+    - After a monster/human connection is made, they should be able to chat with each other to make plans. 

@@ -10,7 +10,18 @@ const Home = () => {
         <Content />
       </Authenticated>
       <Unauthenticated>
-        <p>This is a test!</p>
+        <h1>
+          Welcome to Monster Match: Bridging Two Worlds, One Connection at a Time
+        </h1>
+        <p>
+          In a world where monsters are real, it's time to go beyond fear and embrace understanding. Monster Match is the first-ever inter-species cultural exchange program, designed to help humans and monsters learn from each other in a unique, immersive way.
+        </p>
+        <p>
+        Browse profiles, find your perfect match—whether it's a towering troll, a mischievous imp, or a curious human. Connect, swap places, and step into each other's lives for a while. Just like a student exchange program, Monster Match offers a chance to experience a new perspective, foster empathy, and create lasting bonds between two worlds.
+        </p>
+        <p>
+        Dare to discover the unfamiliar and see that maybe, we’re not so different after all. Start your adventure today with Monster Match!
+        </p>
       </Unauthenticated>
     </>
   )

@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <div id="page-wrapper">
       <header>
-        <Link to={`/`}>Monster Cultural Exchange Program</Link>
+        <Link to={`/`}>Monster Match</Link>
         <nav>
           <Authenticated>
             <Link to={`editProfile`}>Edit My Profile</Link>
