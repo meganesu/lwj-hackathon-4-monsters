@@ -40,7 +40,7 @@ const LoadingPlaceholder = () => {
 
 const Content = () => {
   // state
-  const [currentSpecies, setCurrentSpecies] = useState();
+  const [currentSpecies, setCurrentSpecies] = useState(null);
   const [users, setUsers] = useState([]);
 
   // hooks
@@ -48,8 +48,8 @@ const Content = () => {
   const getUsersBySpeciesAction = useAction(api.users.getUsersBySpeciesAction)
 
   useEffect(() => {
-    const getUsersByOppositeSpecies = async () => {
-      const speciesToShow = currentSpecies === "human" ? "monster": "human"
+    const getUsersByOppositeSpecies = async (currentUserSpecies) => {
+      const speciesToShow = currentUserSpecies === "human" ? "monster": "human"
 
       const usersToShow = await getUsersBySpeciesAction({
         species: speciesToShow
@@ -58,10 +58,11 @@ const Content = () => {
     }
 
     if (currentUser) {
-      setCurrentSpecies(currentUser[0].species)
-      getUsersByOppositeSpecies().catch(error => { console.log("ERROR:", error)})
+      const currentUserSpecies = currentUser[0].species
+      setCurrentSpecies(currentUserSpecies)
+      getUsersByOppositeSpecies(currentUserSpecies).catch(error => { console.log("ERROR:", error)})
     }
-  }, [currentUser, currentSpecies, getUsersBySpeciesAction])
+  }, [currentUser])
 
   if (!currentUser || currentUser.length === 0) {
     return <LoadingPlaceholder />
