@@ -10,35 +10,12 @@ export const getCurrentUser = query({
       throw new Error("Not authenticated!")
     }
 
-    const identityName = identity.name;
-    console.log("identity name", identityName)
-
-    console.log("identity inside getCurrentUser", identity);
-
     return await ctx.db
       .query("users")
       .filter(user => user.eq(user.field("email"), identity.email))
       .collect()
   }
 });
-
-export const getUsersBySpecies = query({
-  args: { species: v.string() },
-  handler: async (ctx, args) => {
-    const identity = await ctx.auth.getUserIdentity();
-    if (identity === null) {
-      throw new Error("Not authenticated!")
-    }
-    console.log("identity from getUsersBySpecies", identity)
-
-    const users = await ctx.db
-      .query("users")
-      .filter(user => user.eq(user.field("species"), args.species))
-      .collect()
-
-    return users
-  }
-})
 
 export const getUsersBySpeciesAction = action({
   args: { species: v.string() },
@@ -47,13 +24,28 @@ export const getUsersBySpeciesAction = action({
     if (identity === null) {
       throw new Error("Not authenticated!")
     }
-    console.log("identity from getUsersBySpeciesAction", identity)
 
     const users = await ctx.runQuery(api.users.getUsersBySpecies, {
       species: args.species
     })
 
-    console.log("users", users)
+    return users
+  }
+})
+
+export const getUsersBySpecies = query({
+  args: { species: v.string() },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (identity === null) {
+      throw new Error("Not authenticated!")
+    }
+
+    const users = await ctx.db
+      .query("users")
+      .filter(user => user.eq(user.field("species"), args.species))
+      .collect()
+
     return users
   }
 })

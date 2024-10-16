@@ -4,6 +4,8 @@ Welcome to the Monster Match!
 
 This app was created as part of the Learn with [Jason Web Dev Challenge Hackathon #4](https://www.learnwithjason.dev/blog/web-dev-challenge-hackathon-monsters).
 
+To run locally, run `npm run dev`.
+
 ## Goal
 
 Monsters are real! And they're real misunderstood!
